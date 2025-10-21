@@ -1,14 +1,16 @@
+import { useState } from 'react'
 import { CORE_CONCEPTS } from './data';
 import Header from './components/Header/Header.jsx'
 import CoreConcepts from './components/CoreConcepts.jsx';
 import TabButton from './components/TabButton.jsx';
 
 function App() {
-  let tabContent = 'Please select the tab';
+  const [selectedTopic, setSelectedTopic] = useState('Please click the button')
+  // let tabContent = 'Please select the tab';
 
   function selecthandler(selectedButton) {
     console.log('Inside select handler', selectedButton);
-    tabContent = selectedButton;
+    setSelectedTopic(selectedButton);
   }
 
   return (
@@ -32,7 +34,7 @@ function App() {
             <TabButton onSelect={() => selecthandler('props')}>Props</TabButton>
             <TabButton onSelect={() => selecthandler('state')}>State</TabButton>
           </menu>
-          Dynamic Content - {tabContent}
+          Dynamic Content - {selectedTopic}
         </section>
       </main>
     </div>
