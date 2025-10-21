@@ -7,7 +7,8 @@ function App() {
   let tabContent = 'Please select the tab';
 
   function selecthandler(selectedButton) {
-    console.log('Inside select handler', selectedButton)
+    console.log('Inside select handler', selectedButton);
+    tabContent = selectedButton;
   }
 
   return (
@@ -31,7 +32,7 @@ function App() {
             <TabButton onSelect={() => selecthandler('props')}>Props</TabButton>
             <TabButton onSelect={() => selecthandler('state')}>State</TabButton>
           </menu>
-          Dynamic Content
+          Dynamic Content - {tabContent}
         </section>
       </main>
     </div>
