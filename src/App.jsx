@@ -6,7 +6,7 @@ import TabButton from './components/TabButton.jsx';
 import { TAB_CONTENTS } from './data/tab-content.js';
 
 function App() {
-  const [selectedTopic, setSelectedTopic] = useState('components');
+  const [selectedTopic, setSelectedTopic] = useState();
 
   function selecthandler(selectedButton) {
     console.log('Inside select handler', selectedButton);
@@ -34,13 +34,14 @@ function App() {
             <TabButton onSelect={() => selecthandler('props')}>Props</TabButton>
             <TabButton onSelect={() => selecthandler('state')}>State</TabButton>
           </menu>
-          <div id='tab-content'>
-            <h3>{TAB_CONTENTS[selectedTopic].title}</h3>
-            <p>{TAB_CONTENTS[selectedTopic].description}</p>
-            <pre>
-              <code>{TAB_CONTENTS[selectedTopic].code}</code>
-            </pre>
-          </div>
+          {!selectedTopic ? <p>Please select the tab for more details</p> :
+            <div id='tab-content'>
+              <h3>{TAB_CONTENTS[selectedTopic].title}</h3>
+              <p>{TAB_CONTENTS[selectedTopic].description}</p>
+              <pre>
+                <code>{TAB_CONTENTS[selectedTopic].code}</code>
+              </pre>
+            </div>}
         </section>
       </main>
     </div>
