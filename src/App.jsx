@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 import { CORE_CONCEPTS } from './data';
 import Header from './components/Header/Header.jsx'
 import CoreConcepts from './components/CoreConcepts.jsx';
@@ -25,7 +25,7 @@ function App() {
   }
 
   return (
-    <div>
+    <>
       <Header />
       <main>
         <section id='core-concepts'>
@@ -45,7 +45,28 @@ function App() {
           {tabContent}
         </section>
       </main>
-    </div>
+    </>
+    // <Fragment>
+    //   <Header />
+    //   <main>
+    //     <section id='core-concepts'>
+    //       <h2>Core Concepts</h2>
+    //       <ul>
+    //         {CORE_CONCEPTS.map((conceptItem) => (<CoreConcepts key={conceptItem.title} {...conceptItem} />))}
+    //       </ul>
+    //     </section>
+    //     <section id="examples">
+    //       <h2>Examples</h2>
+    //       <menu>
+    //         <TabButton isSelected={selectedTopic === 'components'} onSelect={() => selecthandler('components')}>Components</TabButton>
+    //         <TabButton isSelected={selectedTopic === 'jsx'} onSelect={() => selecthandler('jsx')}>JSX</TabButton>
+    //         <TabButton isSelected={selectedTopic === 'props'} onSelect={() => selecthandler('props')}>Props</TabButton>
+    //         <TabButton isSelected={selectedTopic === 'state'} onSelect={() => selecthandler('state')}>State</TabButton>
+    //       </menu>
+    //       {tabContent}
+    //     </section>
+    //   </main>
+    // </Fragment>
   );
 }
 
