@@ -34,14 +34,14 @@ function App() {
             <TabButton onSelect={() => selecthandler('props')}>Props</TabButton>
             <TabButton onSelect={() => selecthandler('state')}>State</TabButton>
           </menu>
-          {!selectedTopic ? <p>Please select the tab for more details</p> :
-            <div id='tab-content'>
-              <h3>{TAB_CONTENTS[selectedTopic].title}</h3>
-              <p>{TAB_CONTENTS[selectedTopic].description}</p>
-              <pre>
-                <code>{TAB_CONTENTS[selectedTopic].code}</code>
-              </pre>
-            </div>}
+          {!selectedTopic && <p>Please select the tab for more details</p>}
+          {selectedTopic && (<div id='tab-content'>
+            <h3>{TAB_CONTENTS[selectedTopic].title}</h3>
+            <p>{TAB_CONTENTS[selectedTopic].description}</p>
+            <pre>
+              <code>{TAB_CONTENTS[selectedTopic].code}</code>
+            </pre>
+          </div>)}
         </section>
       </main>
     </div>
