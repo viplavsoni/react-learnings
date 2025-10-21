@@ -1,4 +1,3 @@
-````markdown
 # Dynamic List Content
 
 You're working on a **"Todo List"** web app, and your task is to output a list of dummy todo items **dynamically**.  
@@ -126,5 +125,3 @@ li {
 * The `DUMMY_TODOS` array provides static values that are rendered dynamically using `.map()`.
 * Each `<Todo>` component is reusable and displays the `text` prop.
 * CSS ensures a **clean and colorful UI** for each todo item.
-
-```
