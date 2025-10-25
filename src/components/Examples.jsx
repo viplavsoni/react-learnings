@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import TabButton from "./TabButton.jsx"
+import Tabs from './Tabs.jsx';
 import Section from './Section.jsx';
 import { TAB_CONTENTS } from "../data/tab-content.js";
 
@@ -24,12 +25,14 @@ export default function Examples() {
 
     return (
         <Section id="examples" title="Examples">
-            <menu>
-                <TabButton isSelected={selectedTopic === 'components'} onClick={() => selecthandler('components')}>Components</TabButton>
-                <TabButton isSelected={selectedTopic === 'jsx'} onClick={() => selecthandler('jsx')}>JSX</TabButton>
-                <TabButton isSelected={selectedTopic === 'props'} onClick={() => selecthandler('props')}>Props</TabButton>
-                <TabButton isSelected={selectedTopic === 'state'} onClick={() => selecthandler('state')}>State</TabButton>
-            </menu>
-            {tabContent}
+            <Tabs buttons={
+                <>
+                    <TabButton isSelected={selectedTopic === 'components'} onClick={() => selecthandler('components')}>Components</TabButton>
+                    <TabButton isSelected={selectedTopic === 'jsx'} onClick={() => selecthandler('jsx')}>JSX</TabButton>
+                    <TabButton isSelected={selectedTopic === 'props'} onClick={() => selecthandler('props')}>Props</TabButton>
+                    <TabButton isSelected={selectedTopic === 'state'} onClick={() => selecthandler('state')}>State</TabButton>
+                </>}>
+                {tabContent}
+            </Tabs>
         </Section>)
 }
