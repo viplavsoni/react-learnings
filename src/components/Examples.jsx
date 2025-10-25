@@ -25,13 +25,14 @@ export default function Examples() {
 
     return (
         <Section id="examples" title="Examples">
-            <Tabs buttons={
-                <>
-                    <TabButton isSelected={selectedTopic === 'components'} onClick={() => selecthandler('components')}>Components</TabButton>
-                    <TabButton isSelected={selectedTopic === 'jsx'} onClick={() => selecthandler('jsx')}>JSX</TabButton>
-                    <TabButton isSelected={selectedTopic === 'props'} onClick={() => selecthandler('props')}>Props</TabButton>
-                    <TabButton isSelected={selectedTopic === 'state'} onClick={() => selecthandler('state')}>State</TabButton>
-                </>}>
+            <Tabs ButtonsContainer="menu"
+                buttons={
+                    <>
+                        <TabButton isSelected={selectedTopic === 'components'} onClick={() => selecthandler('components')}>Components</TabButton>
+                        <TabButton isSelected={selectedTopic === 'jsx'} onClick={() => selecthandler('jsx')}>JSX</TabButton>
+                        <TabButton isSelected={selectedTopic === 'props'} onClick={() => selecthandler('props')}>Props</TabButton>
+                        <TabButton isSelected={selectedTopic === 'state'} onClick={() => selecthandler('state')}>State</TabButton>
+                    </>}>
                 {tabContent}
             </Tabs>
         </Section>)
